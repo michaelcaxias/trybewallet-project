@@ -1,21 +1,23 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Form } from 'semantic-ui-react';
 
 export default function Select(props) {
   const { id, label, array, value, onChange } = props;
+
+  const optionsTest = array.map((item) => ({
+    key: item, text: item, value: item,
+  }));
+
   return (
-    <label htmlFor={ id }>
-      {label}
-      <select
-        id={ id }
-        value={ value }
-        onChange={ onChange }
-        className="form-select"
-      >
-        { array.map((element) => (
-          <option key={ element } value={ element }>{element}</option>)) }
-      </select>
-    </label>
+    <Form.Select
+      fluid
+      id={ id }
+      label={ label }
+      options={ optionsTest }
+      value={ value }
+      onChange={ (e, propsSelect) => onChange(propsSelect) }
+    />
   );
 }
 

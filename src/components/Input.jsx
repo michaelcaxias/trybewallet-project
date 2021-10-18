@@ -1,18 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Form } from 'semantic-ui-react';
 
 export default function Input({ inputValue, onChange, label, id, type = 'text' }) {
   return (
-    <label htmlFor={ id }>
-      {label}
-      <input
-        className="form-control"
-        type={ type }
-        id={ id }
-        value={ inputValue }
-        onChange={ onChange }
-      />
-    </label>
+    <Form.Input
+      type={ type }
+      value={ inputValue }
+      id={ id }
+      label={ label }
+      onChange={ ({ target }) => onChange(target) }
+    />
   );
 }
 

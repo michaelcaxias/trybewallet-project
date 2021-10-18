@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button } from 'semantic-ui-react';
 import { exchangeRating, setCurrencies, addEditedExpense } from '../../actions';
 import Input from '../Input';
 import Select from '../Select';
 import './FormExpense.css';
-import Button from '../Button';
 
 const paymentOptions = ['Dinheiro', 'Cartão de crédito', 'Cartão de débito'];
 const expenseOptions = ['Alimentação', 'Lazer', 'Trabalho', 'Transporte', 'Saúde'];
@@ -57,7 +57,7 @@ class FormExpense extends Component {
     addEditExpense(this.state);
   }
 
-  handleChange({ target: { id, value } }) {
+  handleChange({ id, value }) {
     this.setState({ [id]: value });
   }
 
@@ -104,11 +104,27 @@ class FormExpense extends Component {
   }
 
   render() {
-    const {
-      value,
-      description,
-    } = this.state;
+    const { value, description } = this.state;
     const { isEditing } = this.props;
+    const buttonEdit = (
+      <Button
+        onClick={ this.handleEdit }
+        color="yellow"
+        type="button"
+      >
+        Editar despesa
+      </Button>
+    );
+    const buttonAdd = (
+      <Button
+        onClick={ this.handleClick }
+        color="green"
+        type="button"
+      >
+        Adicionar despesa
+      </Button>
+    );
+
     return (
       <form className="form-expense">
         <Input
@@ -125,9 +141,7 @@ class FormExpense extends Component {
           id="description"
         />
         { this.renderSelect() }
-        {isEditing
-          ? <Button onClick={ this.handleEdit }>Editar despesa</Button>
-          : <Button onClick={ this.handleClick }>Adicionar despesa</Button>}
+        { isEditing ? buttonEdit : buttonAdd }
       </form>
 
     );
