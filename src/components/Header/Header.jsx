@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import walletLogo from '../../images/wallet.png';
+import './Header.css';
 
 function Header({ user, expenses }) {
   const totalValue = expenses.reduce((acc, curr) => {
@@ -11,7 +12,7 @@ function Header({ user, expenses }) {
   }, 0);
 
   return (
-    <header className="header">
+    <header className="header-wallet">
       <img src={ walletLogo } draggable={ false } alt="logo" />
       <section className="email-total-field">
         <span data-testid="email-field">{`Email: ${user}`}</span>
