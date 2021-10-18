@@ -1,12 +1,3 @@
-.table-expense {
-  background-color: #212529;
-  width: 100%;
-}
-
-.table-expense td {
-  padding: 1rem;
-}
-
-.table-expense th {
-  padding: 0.7rem;
+.table-wallet {
+  margin: 0 ! important;
 }

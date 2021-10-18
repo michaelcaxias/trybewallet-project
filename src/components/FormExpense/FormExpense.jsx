@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 import { exchangeRating, setCurrencies, addEditedExpense } from '../../actions';
 import Input from '../Input';
 import Select from '../Select';
@@ -107,42 +107,46 @@ class FormExpense extends Component {
     const { value, description } = this.state;
     const { isEditing } = this.props;
     const buttonEdit = (
-      <Button
+      <Form.Button
         onClick={ this.handleEdit }
+        className="form-button"
         color="yellow"
         type="button"
       >
         Editar despesa
-      </Button>
+      </Form.Button>
     );
     const buttonAdd = (
-      <Button
+      <Form.Button
         onClick={ this.handleClick }
+        className="form-button"
         color="green"
         type="button"
       >
         Adicionar despesa
-      </Button>
+      </Form.Button>
     );
 
     return (
-      <form className="form-expense">
-        <Input
-          inputValue={ value }
-          onChange={ this.handleChange }
-          label="Valor:"
-          type="number"
-          id="value"
-        />
-        <Input
-          inputValue={ description }
-          onChange={ this.handleChange }
-          label="Descrição:"
-          id="description"
-        />
-        { this.renderSelect() }
-        { isEditing ? buttonEdit : buttonAdd }
-      </form>
+      <Form className="form-expense">
+        <Form.Group widths="equal">
+          <Input
+            inputValue={ value }
+            onChange={ this.handleChange }
+            label="Valor:"
+            type="number"
+            id="value"
+          />
+          <Input
+            inputValue={ description }
+            onChange={ this.handleChange }
+            label="Descrição:"
+            id="description"
+          />
+          { this.renderSelect() }
+          { isEditing ? buttonEdit : buttonAdd }
+        </Form.Group>
+      </Form>
 
     );
   }

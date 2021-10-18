@@ -5,10 +5,10 @@ import TableExpense from '../components/TableExpense/TableExpense';
 
 export default function Wallet() {
   return (
-    <section>
+    <main className="wallet-main">
       <Header />
       <FormExpense />
       <TableExpense />
-    </section>
+    </main>
   );
 }

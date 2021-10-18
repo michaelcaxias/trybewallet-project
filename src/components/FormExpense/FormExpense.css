@@ -1,15 +1,15 @@
 .form-expense {
-  align-items: flex-end;
   background-color: #1f2125;
-  color: white;
-  display: flex;
-  justify-content: space-between;
   padding: 1.5rem;
 }
 
+
 .form-expense label {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  color: white ! important;
+}
+
+.form-button {
+  align-self: flex-end;
+  justify-self: center;
 }
 
