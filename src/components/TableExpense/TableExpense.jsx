@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
+import { Table, Button } from 'semantic-ui-react';
 import ButtonDelete from '../ButtonDelete';
 import ButtonEdit from '../ButtonEdit';
 import './TableExpense.css';
@@ -17,34 +18,37 @@ const tableHeader = ['Descrição',
 
 function TableExpense({ expenses }) {
   return (
-    <table border="1" className="table-expense">
-      <thead>
-        <tr>
-          {tableHeader.map((item) => <th key={ item }>{item}</th>)}
-        </tr>
-      </thead>
-      <tbody>
+    <Table color="black" inverted>
+      <Table.Header>
+        <Table.Row>
+          {tableHeader.map((item) => (
+            <Table.HeaderCell key={ item }>{item}</Table.HeaderCell>
+          ))}
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
         {expenses.map((expense, index) => {
           const currentCurrency = expense.exchangeRates[expense.currency];
           const ask = Number(currentCurrency.ask);
           return (
-            <tr key={ index }>
-              <td>{expense.description}</td>
-              <td>{expense.tag}</td>
-              <td>{expense.method}</td>
-              <td>{expense.value}</td>
-              <td>{currentCurrency.name.split('/')[0]}</td>
-              <td>{ask.toFixed(2)}</td>
-              <td>{(expense.value * ask).toFixed(2)}</td>
-              <td>Real</td>
-              <ButtonEdit id={ expense.id } />
-              <ButtonDelete id={ expense.id } />
-            </tr>
+            <Table.Row key={ index }>
+              <Table.Cell>{expense.description}</Table.Cell>
+              <Table.Cell>{expense.tag}</Table.Cell>
+              <Table.Cell>{expense.method}</Table.Cell>
+              <Table.Cell>{expense.value}</Table.Cell>
+              <Table.Cell>{currentCurrency.name.split('/')[0]}</Table.Cell>
+              <Table.Cell>{ask.toFixed(2)}</Table.Cell>
+              <Table.Cell>{(expense.value * ask).toFixed(2)}</Table.Cell>
+              <Table.Cell>Real</Table.Cell>
+              <Button.Group>
+                <ButtonEdit id={ expense.id } />
+                <ButtonDelete id={ expense.id } />
+              </Button.Group>
+            </Table.Row>
           );
         })}
-      </tbody>
-      <tfoot />
-    </table>
+      </Table.Body>
+    </Table>
   );
 }
 

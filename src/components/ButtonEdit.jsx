@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import { AiFillEdit } from 'react-icons/ai';
+import { Button } from 'semantic-ui-react';
 import { editExpenses } from '../actions';
 
 function ButtonEdit({ id, editExpense }) {
@@ -10,15 +10,12 @@ function ButtonEdit({ id, editExpense }) {
   };
 
   return (
-    <button
-      type="button"
+    <Button
       onClick={ handleEdit }
-      className="btn btn-warning"
       data-testid="edit-btn"
-    >
-      <AiFillEdit />
-
-    </button>
+      color="yellow"
+      icon="edit"
+    />
   );
 }
 

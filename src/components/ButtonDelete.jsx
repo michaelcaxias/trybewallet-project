@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import { BsFillTrashFill } from 'react-icons/bs';
+import { Button } from 'semantic-ui-react';
 import { deleteExpenses } from '../actions';
 
 function ButtonDelete({ id, deleteExpense }) {
@@ -10,15 +10,12 @@ function ButtonDelete({ id, deleteExpense }) {
   };
 
   return (
-    <button
-      type="button"
+    <Button
       onClick={ handleDelete }
-      className="btn btn-danger"
       data-testid="delete-btn"
-    >
-      <BsFillTrashFill />
-
-    </button>
+      color="red"
+      icon="trash"
+    />
   );
 }
 
