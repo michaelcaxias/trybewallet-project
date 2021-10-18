@@ -51,6 +51,7 @@ const walletReducer = (state = INITIAL_STATE, action) => {
         }
         return expense;
       }),
+      expenseToEdit: {},
       isEditing: false,
     };
 
