@@ -13,14 +13,14 @@
   justify-self: center;
 }
 
-.form-button button {
+.form-button.button-add button {
   background: linear-gradient(-35deg, #03d773, #00f7cf) ! important;
 }
 
-.form-button button:hover {
+.form-button.button-add button:hover {
   background: linear-gradient(-35deg, #03d773, #0ad4b3) ! important;
 }
 
-.form-button button:active {
+.form-button.button-add button:active {
   background: linear-gradient(-35deg, #08c56d, #09b396) ! important;
 }

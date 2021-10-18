@@ -119,7 +119,7 @@ class FormExpense extends Component {
     const buttonAdd = (
       <Form.Button
         onClick={ this.handleClick }
-        className="form-button"
+        className="form-button button-add"
         color="green"
         type="button"
       >
