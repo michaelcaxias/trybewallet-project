@@ -18,7 +18,7 @@ const tableHeader = ['Descrição',
 
 function TableExpense({ expenses }) {
   return (
-    <Table color="black" inverted className="table-wallet">
+    <Table color="black" inverted className="table-wallet" selectable>
       <Table.Header>
         <Table.Row>
           {tableHeader.map((item) => (
