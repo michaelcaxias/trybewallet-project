@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Button, Form, Grid, Header, Image, Segment } from 'semantic-ui-react';
 import { sendLogin } from '../actions';
 import logoWallet from '../images/wallet.png';
+import './Login.css';
 
 // Função para validar email no JavaScript inspirada a partir de
 // https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
@@ -59,7 +60,7 @@ function Login({ history, dispatchSetValue }) {
               fluid
               size="large"
               onClick={ handleClick }
-              className="btn btn-primary"
+              className="button-login"
               disabled={ !disabled }
             >
               Entrar

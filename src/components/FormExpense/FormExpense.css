@@ -20,3 +20,7 @@
 .form-button button:hover {
   background: linear-gradient(-35deg, #03d773, #0ad4b3) ! important;
 }
+
+.form-button button:active {
+  background: linear-gradient(-35deg, #08c56d, #09b396) ! important;
+}
