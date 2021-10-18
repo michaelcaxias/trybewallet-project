@@ -13,3 +13,10 @@
   justify-self: center;
 }
 
+.form-button button {
+  background: linear-gradient(-35deg, #03d773, #00f7cf) ! important;
+}
+
+.form-button button:hover {
+  background: linear-gradient(-35deg, #03d773, #0ad4b3) ! important;
+}
