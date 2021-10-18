@@ -40,7 +40,7 @@ function TableExpense({ expenses }) {
               <Table.Cell>{ask.toFixed(2)}</Table.Cell>
               <Table.Cell>{(expense.value * ask).toFixed(2)}</Table.Cell>
               <Table.Cell>Real</Table.Cell>
-              <Button.Group>
+              <Button.Group labeled icon>
                 <ButtonEdit id={ expense.id } />
                 <ButtonDelete id={ expense.id } />
               </Button.Group>

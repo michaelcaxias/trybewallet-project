@@ -14,6 +14,7 @@ function ButtonEdit({ id, editExpense }) {
       onClick={ handleEdit }
       data-testid="edit-btn"
       color="yellow"
+      content="Editar"
       icon="edit"
     />
   );

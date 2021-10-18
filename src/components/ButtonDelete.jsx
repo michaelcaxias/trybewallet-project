@@ -14,6 +14,7 @@ function ButtonDelete({ id, deleteExpense }) {
       onClick={ handleDelete }
       data-testid="delete-btn"
       color="red"
+      content="Excluir"
       icon="trash"
     />
   );
