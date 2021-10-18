@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import './Header.css';
 import walletLogo from '../../images/wallet.png';
 
 function Header({ user, expenses }) {
