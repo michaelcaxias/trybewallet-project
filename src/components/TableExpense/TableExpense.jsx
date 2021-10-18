@@ -17,6 +17,11 @@ const tableHeader = ['Descrição',
 ];
 
 function TableExpense({ expenses }) {
+  const formatPrice = (number) => Intl.NumberFormat(
+    'pt-br',
+    { style: 'currency', currency: 'BRL' },
+  ).format((number));
+
   return (
     <Table color="black" inverted className="table-wallet" selectable>
       <Table.Header>
@@ -35,10 +40,10 @@ function TableExpense({ expenses }) {
               <Table.Cell>{expense.description}</Table.Cell>
               <Table.Cell>{expense.tag}</Table.Cell>
               <Table.Cell>{expense.method}</Table.Cell>
-              <Table.Cell>{expense.value}</Table.Cell>
+              <Table.Cell>{formatPrice(expense.value)}</Table.Cell>
               <Table.Cell>{currentCurrency.name.split('/')[0]}</Table.Cell>
-              <Table.Cell>{ask.toFixed(2)}</Table.Cell>
-              <Table.Cell>{(expense.value * ask).toFixed(2)}</Table.Cell>
+              <Table.Cell>{formatPrice(ask)}</Table.Cell>
+              <Table.Cell>{formatPrice(expense.value * ask)}</Table.Cell>
               <Table.Cell>Real</Table.Cell>
               <Button.Group labeled icon>
                 <ButtonEdit id={ expense.id } />

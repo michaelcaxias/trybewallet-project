@@ -5,6 +5,11 @@ import walletLogo from '../../images/wallet.png';
 import './Header.css';
 
 function Header({ user, expenses }) {
+  const formatPrice = (number) => Intl.NumberFormat(
+    'pt-br',
+    { style: 'currency', currency: 'BRL' },
+  ).format((number));
+
   const totalValue = expenses.reduce((acc, curr) => {
     const value = Number(curr.value);
     const quotation = Number(curr.exchangeRates[curr.currency].ask);
@@ -17,7 +22,7 @@ function Header({ user, expenses }) {
       <section className="email-total-field">
         <span data-testid="email-field">{`Email: ${user}`}</span>
         <section>
-          <span data-testid="total-field">{`R$ ${totalValue}`}</span>
+          <span data-testid="total-field">{formatPrice(totalValue)}</span>
           <span data-testid="header-currency-field">BRL</span>
         </section>
       </section>
