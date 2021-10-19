@@ -31,7 +31,7 @@ class FormExpense extends Component {
 
   componentDidMount() {
     this.fetchCurrency();
-  } 
+  }
 
   async handleClick() {
     const { setExpenses } = this.props;
