@@ -10,9 +10,8 @@ function Header({ user, expenses }) {
     { style: 'currency', currency: 'BRL' },
   ).format((number));
 
-  const totalValue = expenses.reduce((acc, curr) => {
-    const value = Number(curr.value);
-    const quotation = Number(curr.exchangeRates[curr.currency].ask);
+  const totalValue = expenses.reduce((acc, { value, currency, exchangeRates }) => {
+    const quotation = exchangeRates[currency].ask;
     return acc + (value * quotation);
   }, 0);
 
