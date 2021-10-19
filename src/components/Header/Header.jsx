@@ -30,9 +30,9 @@ function Header({ user, expenses }) {
 }
 
 Header.propTypes = {
-  expenses: PropTypes.shape({
-    reduce: PropTypes.func,
-  }).isRequired,
+  expenses: PropTypes.arrayOf(
+    PropTypes.any,
+  ).isRequired,
   user: PropTypes.string.isRequired,
 };
 
